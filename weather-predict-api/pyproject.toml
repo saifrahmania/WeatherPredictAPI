@@ -1,20 +1,28 @@
-[build-system]
-requires = ["setuptools>=68", "wheel"]
-build-backend = "setuptools.build_meta"
-
-[project]
+[tool.poetry]
 name = "open-meteo-api"
 version = "0.1.0"
-description = "FastAPI service for rain/no-rain (+7d) and 3-day precipitation predictions for Sydney"
+description = "FastAPI app for Open Meteo ML models (AT2)"
+authors = ["Md Saifur Rahman <mdsaifur.rahman@student.uts.edu.au>"]
 readme = "README.md"
-requires-python = ">=3.10"
-authors = [{ name = "Your Name" }]
-license = { text = "Proprietary" }
-keywords = ["fastapi", "weather", "ml", "open-meteo", "api"]
+package-mode = false
 
-# Keep runtime deps in requirements.txt as per assignment brief
-dependencies = ["fastapi (==0.115.0)", "uvicorn (==0.30.6)", "scikit-learn (==1.5.2)", "pandas (==2.2.2)", "numpy (==2.1.1)", "joblib (==1.4.2)", "python-dateutil (==2.9.0.post0)", "requests (==2.32.3)", "openmeteo-requests (==1.7.2)", "notebook (>=7.4.5,<8.0.0)", "ipykernel (>=6.30.1,<7.0.0)"]
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.110"
+uvicorn = {version="^0.23", extras=["standard"]}
+pandas = "^2.0"
+numpy = "^1.24"
+scikit-learn = "^1.3"
+joblib = "^1.3"
+pydantic = "^2.0"
 
-[tool.pytest.ini_options]
-minversion = "7.0"
-addopts = "-q"
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3"
+httpx = "^0.27"
+ruff = "^0.6.0"
+jupyterlab = "^4.4.9"
+ipykernel = "^6.30.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
