@@ -33,3 +33,5 @@ You can test the following endpoints in your browser or with `curl`:
 - **API Documentation**  
   [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs) 
   Shows interactive API docs (Swagger UI).
+
+  
