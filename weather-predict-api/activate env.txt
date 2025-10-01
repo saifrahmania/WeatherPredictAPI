@@ -1,0 +1,7 @@
+# activate env
+poetry env activate
+
+
+# jupyter notebook
+poetry run jupyter notebook
+
